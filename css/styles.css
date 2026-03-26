@@ -1,0 +1,113 @@
+/* FONT */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6d2db, #f3c3d3); /* seamless gradient */
+  margin: 0;
+  color: #333;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  min-height: 100vh;  /* full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  padding: 15px 10px 10px 10px;
+  text-align: center;
+  color: #444;
+  /* remove background from header since body now has the gradient */
+}
+
+/* LOGO */
+.logo-img {
+  width: 160px;
+  margin-bottom: -20px;
+}
+
+/* TITLE */
+.title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+
+/* TAGLINE */
+.tagline {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* DESCRIPTION */
+.subtext {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+/* BUTTON LIST */
+.bubble-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 15px auto;
+  max-width: 420px;
+}
+
+.bubble-list li {
+  margin-bottom: 10px; /* spacing between buttons */
+}
+
+/* BUTTON BOX STYLE */
+.bubble-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #444;
+  background: linear-gradient(135deg, #fff, #f4e6ec);
+  border-radius: 12px;
+  border: 1px solid #e6d3da;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+/* BUTTON HOVER */
+.bubble-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* MEMBERSHIP CARD BELOW BUTTONS */
+.membership-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff, #f4e6ec);
+  border-radius: 12px;
+  border: 1px solid #e6d3da;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  padding: 10px;
+  width: 90%;        /* slightly smaller than buttons */
+  max-width: 380px;  /* optional max width */
+  margin: 20px auto 0 auto; /* half-inch gap above */
+  height: auto;      /* allow it to shrink */
+}
+
+/* MEMBER TITLE */
+.member-title {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 12px;
+  color: #444;
+  /* remove gradient, since body already has it */
+  margin-top: auto;
+}
