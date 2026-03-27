@@ -100,52 +100,54 @@ header {
   transform: rotate(180deg);
 }
 
-/* ADMIN LIST - stacked, only first and last have bubble edges */
+/* ADMIN LIST */
 .admin-list {
   list-style: none;
   padding: 0;
-  margin: 0; /* remove spacing around the list */
+  margin: 0;
 }
 
 .admin-list li {
-  margin: 0; /* no spacing between items */
+  margin: 0;
 }
 
 .admin-list a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 14px; /* smaller height and padding */
+  padding: 8px 14px;
   height: 45px;
   color: #444;
   text-decoration: none;
   font-size: 0.95rem;
   background: linear-gradient(135deg, #fff, #f4e6ec);
   border: 1px solid #e6d3da;
-  border-radius: 0; /* default square for all buttons */
-  border-top: none; /* remove top border for flush stacking */
+  border-radius: 0;
+  border-top: none;
   transition: all 0.2s ease;
 }
 
-/* First item: top corners rounded */
-.admin-list a:first-child {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-top: 1px solid #e6d3da; /* restore top border */
+/* FIRST */
+.admin-list li:first-child a {
+  border-radius: 12px 12px 0 0;
 }
 
-/* Last item: bottom corners rounded */
-.admin-list a:last-child {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+/* LAST */
+.admin-list li:last-child a {
+  border-radius: 0 0 12px 12px;
+  border-bottom: 1px solid #e6d3da;
 }
 
-/* Hover effect */
+.admin-list a .admin-text {
+  text-align: center; /* center the text in middle column */
+}
+
+/* Hover */
 .admin-list a:hover {
   background: linear-gradient(135deg, #ffffff, #f4e6ec);
 }
 
-/* Arrow for admin buttons */
+/* ADMIN ARROW */
 .admin-list a .arrow {
   opacity: 0;
   transform: translateX(-6px);
