@@ -1,11 +1,11 @@
-/* FONT */
+/* BODY */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f6d2db, #f3c3d3); /* seamless gradient */
+  background: linear-gradient(135deg, #f6d2db, #f3c3d3);
   margin: 0;
   color: #333;
-  overflow-x: hidden; /* prevent horizontal scroll */
-  min-height: 100vh;  /* full viewport height */
+  overflow-x: hidden;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -15,7 +15,6 @@ header {
   padding: 15px 10px 10px 10px;
   text-align: center;
   color: #444;
-  /* remove background from header since body now has the gradient */
 }
 
 /* LOGO */
@@ -33,15 +32,15 @@ header {
 
 /* TAGLINE */
 .tagline {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
 /* DESCRIPTION */
 .subtext {
-  font-size: 0.8rem;
+  font-size: 1rem;
   opacity: 0.9;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 /* BUTTON LIST */
@@ -53,33 +52,112 @@ header {
 }
 
 .bubble-list li {
-  margin-bottom: 10px; /* spacing between buttons */
+  margin-bottom: 10px;
 }
 
-/* BUTTON BOX STYLE */
+/* MAIN BUTTON */
 .bubble-btn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: 60px;
+  justify-content: space-between;
+  padding: 0 18px;
+  height: 65px;
   text-decoration: none;
   font-weight: 500;
   color: #444;
   background: linear-gradient(135deg, #fff, #f4e6ec);
   border-radius: 12px;
   border: 1px solid #e6d3da;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: all 0.2s;
+  cursor: pointer;
 }
 
-/* BUTTON HOVER */
 .bubble-btn:hover {
   background: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
 }
 
-/* MEMBERSHIP CARD BELOW BUTTONS */
+/* BUTTON ARROW */
+.bubble-btn .arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.25s ease;
+}
+
+.bubble-btn:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* CONTACT BUTTON ROTATION */
+.contact-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:not(.collapsed) .arrow {
+  transform: rotate(180deg);
+}
+
+/* ADMIN LIST - stacked, only first and last have bubble edges */
+.admin-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* remove spacing around the list */
+}
+
+.admin-list li {
+  margin: 0; /* no spacing between items */
+}
+
+.admin-list a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px; /* smaller height and padding */
+  height: 45px;
+  color: #444;
+  text-decoration: none;
+  font-size: 0.95rem;
+  background: linear-gradient(135deg, #fff, #f4e6ec);
+  border: 1px solid #e6d3da;
+  border-radius: 0; /* default square for all buttons */
+  border-top: none; /* remove top border for flush stacking */
+  transition: all 0.2s ease;
+}
+
+/* First item: top corners rounded */
+.admin-list a:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid #e6d3da; /* restore top border */
+}
+
+/* Last item: bottom corners rounded */
+.admin-list a:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Hover effect */
+.admin-list a:hover {
+  background: linear-gradient(135deg, #ffffff, #f4e6ec);
+}
+
+/* Arrow for admin buttons */
+.admin-list a .arrow {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: all 0.25s ease;
+}
+
+.admin-list a:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* MEMBERSHIP CARD */
 .membership-card {
   display: flex;
   flex-direction: column;
@@ -87,16 +165,14 @@ header {
   background: linear-gradient(135deg, #fff, #f4e6ec);
   border-radius: 12px;
   border: 1px solid #e6d3da;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   font-size: 0.85rem;
   padding: 10px;
-  width: 90%;        /* slightly smaller than buttons */
-  max-width: 380px;  /* optional max width */
-  margin: 20px auto 0 auto; /* half-inch gap above */
-  height: auto;      /* allow it to shrink */
+  width: 90%;
+  max-width: 380px;
+  margin: 20px auto 0 auto;
 }
 
-/* MEMBER TITLE */
 .member-title {
   font-weight: 600;
   margin-bottom: 3px;
@@ -106,8 +182,7 @@ header {
 footer {
   text-align: center;
   font-size: 0.8rem;
-  padding: 12px;
+  padding: 20px;
   color: #444;
-  /* remove gradient, since body already has it */
   margin-top: auto;
 }
